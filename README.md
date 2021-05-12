@@ -101,3 +101,15 @@ From the above graph we can understand that the PSNR value of the 47th epoch is 
 ![image](https://user-images.githubusercontent.com/29349268/118013085-4fc07500-b384-11eb-9eda-4210175bb393.png)
 
 Chose the model parameters of the 47th epoch to create the super resolution images of the private test set.
+
+# Sample Images before and after applying super resolution
+
+![0048](https://user-images.githubusercontent.com/29349268/118014301-a11d3400-b385-11eb-98c2-34b042a1b051.png)
+![0048](https://user-images.githubusercontent.com/29349268/118014333-ada18c80-b385-11eb-8d3c-9a8f4f323e72.png)
+
+--------------------------------------------------------------------------------------------------------------
+![0037](https://user-images.githubusercontent.com/29349268/118014751-1c7ee580-b386-11eb-9a1e-a6f3116f01ce.png)
+![0037](https://user-images.githubusercontent.com/29349268/118014767-2274c680-b386-11eb-80d3-9a31404e7755.png)
+
+
+
