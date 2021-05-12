@@ -3,14 +3,20 @@ Created a model that can increase the resolution of images by 4 times, using an 
 
 # Task
 The task of this project is to  increase the result of a single image. A high resolution and 4 times scaled low resolution pairs are given. Need to build a model that can create a high-resolution image from the low-resolution image.  PSNR will be the matric used to compare the quality of the created images.
-Image Loading and Processing
+
+# Image Loading and Processing
+
+Download dataset: https://data.vision.ee.ethz.ch/cvl/DIV2K/
+
 PIL library was used to load the image and convert the same to tensor value for processing.  PIL also provides a normalized tensor of the images for processing.
 The functionalities provided by PIL was used for data augmentation also.
-Model 
+
+ # Model 
 The model used this project is SRResNet provided by BasicSR framework. This is a modified version of the SR-Resnet. The model uses residual network without Batch Normalization.
+```
 from basicsr.models.archs.srresnet_arch import MSRResNet
 model = MSRResNet()
-
+```
 The  default parameter values of the models were used. 
 num_in_ch=3, num_out_ch=3, num_feat=64, num_block=16, upscale=4
 
@@ -51,13 +57,13 @@ Image augmentation techniques were used to improve the accuracy of the network. 
 •	Increase and decrease sharpness -  Both the Low resolution and high-resolution brightness were changes by a factor of 2 and 0.05 using PIL. The ImageEnhance functionality provided by PIL was used to change the sharpness.
 
 •	Rotate image by 90 degree - Both the Low resolution and high-resolution images were rotated 90 degrees using PIL. The rotate functionality provided by PIL was used.
-
+```
 image=image.rotate(90, expand=True)
-
+```
 •	Random Crop- Both the Low resolution and high-resolution images cropped in similar proportions using PIL. The coordinates of the patch that need to be cropped is initialized an passed to the crop functionality provided by PIL.
-
+```
 image=image.crop((left, top, right, bottom))
-
+```
 •	Crop from random image and paste – Crop a patch from random image and paste it in the image that is trained for both low and high resolution images using PIL. Crop and paste functionality provided by PIL is used.
 
       #Cropping a patch from random image.
@@ -79,10 +85,10 @@ PyTorch provide a functionality to save the checkpoints by saving the model para
 # Metric Used
 
 PSNR(Peak Signal to noise ratio) was used as the metric for checking the image quality. The function provided by BasciSR framework was used for PSNR calculation.
-
+```
 from basicsr.metrics.psnr_ssim import calculate_psnr
 psnr=calculate_psnr(predictedImage, groudTruth, crop_border=4, input_order='CHW')
-
+```
 # map_score_to_0_1
 A function was written to map the predicted values in the range of 0 to 1 for converting it back to image. It takes in a tensor does the calculation for mapping.
 
