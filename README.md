@@ -1,5 +1,5 @@
 # Image Super-Resolution
-Created a model that can increase the resolution of images by 4 times, using an SRResNet model provided by BasicSR framework and DIV2K data set. Multiple data augmentation techniques were used along with the MSE loss function. 
+Created a model that can increase the resolution of images by 4 times, using an SRResNet model provided by BasicSR framework and DIV2K data set. Multiple data augmentation techniques were used along with the MSE loss function. Obtained a PSNR value of 26.341 dB after 47 epochs. 
 
 # Task
 The task of this project is to  increase the result of a single image. A high resolution and 4 times scaled low resolution pairs are given. Need to build a model that can create a high-resolution image from the low-resolution image.  PSNR will be the matric used to compare the quality of the created images.
