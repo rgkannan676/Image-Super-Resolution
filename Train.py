@@ -52,7 +52,7 @@ criterion=nn.L1Loss()
 optimizer = optim.Adam(model.parameters(),lr=0.0001)
 
 
-for epoch in range(32,150):
+for epoch in range(0,150):
 
     
     print('&&epoch is '+ str(epoch))
